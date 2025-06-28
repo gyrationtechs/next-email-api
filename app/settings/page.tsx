@@ -213,7 +213,7 @@ function SettingsPage() {
                     <li>Get your API key from the <a href="https://resend.com/api-keys" target="_blank" rel="noopener noreferrer" style={{ color: '#0056b3' }}>Resend Dashboard</a></li>
                     <li>Verify your domain or email address in Resend</li>
                     <li>Enter your API key and verified email address above</li>
-                    <li>Click "Save Settings" to test and save your configuration</li>
+                    <li>Click &ldquo;Save Settings&rdquo; to test and save your configuration</li>
                 </ol>
             </div>
         </div>

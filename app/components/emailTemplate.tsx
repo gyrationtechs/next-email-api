@@ -10,7 +10,7 @@ export function EmailTemplate({ firstName, content }: EmailTemplateProps) {
     <div style={{ fontFamily: 'Arial, sans-serif', padding: '20px', maxWidth: '600px' }}>
       <h1 style={{ color: '#333', marginBottom: '20px' }}>Welcome, {firstName}!</h1>
       <p style={{ color: '#666', lineHeight: '1.6' }}>
-        Thank you for signing up with our service. We're excited to have you on board!
+        Thank you for signing up with our service. We&apos;re excited to have you on board!
       </p>
       {content && (
         <div style={{ 
