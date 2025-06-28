@@ -1,103 +1,371 @@
-import Image from "next/image";
+'use client'
+import React from 'react'
+import Link from 'next/link'
+import Navbar from './components/Navbar'
 
 export default function Home() {
   return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-      <main className="flex flex-col gap-[32px] row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="list-inside list-decimal text-sm/6 text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
-          <li className="mb-2 tracking-[-.01em]">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] px-1 py-0.5 rounded font-[family-name:var(--font-geist-mono)] font-semibold">
-              app/page.tsx
-            </code>
-            .
-          </li>
-          <li className="tracking-[-.01em]">
-            Save and see your changes instantly.
-          </li>
-        </ol>
+    <>
+      <Navbar />
+      <div style={{ minHeight: '100vh', backgroundColor: '#f8f9fa' }}>
+        {/* Hero Section */}
+        <section style={{
+          padding: '80px 20px',
+          textAlign: 'center',
+          background: 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)',
+          color: 'white'
+        }}>
+          <div style={{ maxWidth: '800px', margin: '0 auto' }}>
+            <h1 style={{
+              fontSize: '3.5rem',
+              marginBottom: '20px',
+              fontWeight: '700',
+              textShadow: '0 2px 4px rgba(0,0,0,0.3)'
+            }}>
+              Email API Platform
+            </h1>
+            <p style={{
+              fontSize: '1.3rem',
+              marginBottom: '40px',
+              opacity: '0.9',
+              lineHeight: '1.6'
+            }}>
+              Send beautiful, personalized emails to multiple recipients with our powerful and easy-to-use email API platform.
+            </p>
+            <div style={{ display: 'flex', gap: '20px', justifyContent: 'center', flexWrap: 'wrap' }}>
+              <Link
+                href="/dashboard"
+                style={{
+                  padding: '15px 30px',
+                  backgroundColor: '#28a745',
+                  color: 'white',
+                  textDecoration: 'none',
+                  borderRadius: '8px',
+                  fontSize: '1.1rem',
+                  fontWeight: '600',
+                  transition: 'transform 0.2s',
+                  display: 'inline-block'
+                }}
+                onMouseOver={(e) => e.currentTarget.style.transform = 'translateY(-2px)'}
+                onMouseOut={(e) => e.currentTarget.style.transform = 'translateY(0)'}
+              >
+                Get Started
+              </Link>
+              <Link
+                href="/settings"
+                style={{
+                  padding: '15px 30px',
+                  backgroundColor: 'transparent',
+                  color: 'white',
+                  textDecoration: 'none',
+                  borderRadius: '8px',
+                  fontSize: '1.1rem',
+                  fontWeight: '600',
+                  border: '2px solid white',
+                  transition: 'all 0.2s',
+                  display: 'inline-block'
+                }}
+                onMouseOver={(e) => {
+                  e.currentTarget.style.backgroundColor = 'white';
+                  e.currentTarget.style.color = '#667eea';
+                }}
+                onMouseOut={(e) => {
+                  e.currentTarget.style.backgroundColor = 'transparent';
+                  e.currentTarget.style.color = 'white';
+                }}
+              >
+                Configure Settings
+              </Link>
+            </div>
+          </div>
+        </section>
 
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:w-auto"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 w-full sm:w-auto md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
-        </div>
-      </main>
-      <footer className="row-start-3 flex gap-[24px] flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
-    </div>
-  );
+        {/* Features Section */}
+        <section style={{ padding: '80px 20px', backgroundColor: 'white' }}>
+          <div style={{ maxWidth: '1200px', margin: '0 auto' }}>
+            <h2 style={{
+              textAlign: 'center',
+              fontSize: '2.5rem',
+              marginBottom: '60px',
+              color: '#333',
+              fontWeight: '600'
+            }}>
+              Powerful Features
+            </h2>
+            
+            <div style={{
+              display: 'grid',
+              gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))',
+              gap: '40px'
+            }}>
+              {/* Feature 1 */}
+              <div style={{
+                padding: '30px',
+                borderRadius: '12px',
+                backgroundColor: '#f8f9fa',
+                textAlign: 'center',
+                transition: 'transform 0.3s ease',
+                border: '1px solid #e9ecef'
+              }}
+              onMouseOver={(e) => e.currentTarget.style.transform = 'translateY(-5px)'}
+              onMouseOut={(e) => e.currentTarget.style.transform = 'translateY(0)'}
+              >
+                <div style={{
+                  width: '60px',
+                  height: '60px',
+                  backgroundColor: '#007bff',
+                  borderRadius: '50%',
+                  display: 'flex',
+                  alignItems: 'center',
+                  justifyContent: 'center',
+                  margin: '0 auto 20px',
+                  fontSize: '24px',
+                  color: 'white'
+                }}>
+                  📧
+                </div>
+                <h3 style={{ fontSize: '1.5rem', marginBottom: '15px', color: '#333' }}>
+                  Multiple Recipients
+                </h3>
+                <p style={{ color: '#666', lineHeight: '1.6' }}>
+                  Send emails to multiple recipients simultaneously using comma-separated email addresses. Perfect for newsletters and announcements.
+                </p>
+              </div>
+
+              {/* Feature 2 */}
+              <div style={{
+                padding: '30px',
+                borderRadius: '12px',
+                backgroundColor: '#f8f9fa',
+                textAlign: 'center',
+                transition: 'transform 0.3s ease',
+                border: '1px solid #e9ecef'
+              }}
+              onMouseOver={(e) => e.currentTarget.style.transform = 'translateY(-5px)'}
+              onMouseOut={(e) => e.currentTarget.style.transform = 'translateY(0)'}
+              >
+                <div style={{
+                  width: '60px',
+                  height: '60px',
+                  backgroundColor: '#28a745',
+                  borderRadius: '50%',
+                  display: 'flex',
+                  alignItems: 'center',
+                  justifyContent: 'center',
+                  margin: '0 auto 20px',
+                  fontSize: '24px',
+                  color: 'white'
+                }}>
+                  🎨
+                </div>
+                <h3 style={{ fontSize: '1.5rem', marginBottom: '15px', color: '#333' }}>
+                  HTML Email Builder
+                </h3>
+                <p style={{ color: '#666', lineHeight: '1.6' }}>
+                  Create beautiful, formatted emails using HTML. Built-in template buttons make it easy to add headings, paragraphs, and links.
+                </p>
+              </div>
+
+              {/* Feature 3 */}
+              <div style={{
+                padding: '30px',
+                borderRadius: '12px',
+                backgroundColor: '#f8f9fa',
+                textAlign: 'center',
+                transition: 'transform 0.3s ease',
+                border: '1px solid #e9ecef'
+              }}
+              onMouseOver={(e) => e.currentTarget.style.transform = 'translateY(-5px)'}
+              onMouseOut={(e) => e.currentTarget.style.transform = 'translateY(0)'}
+              >
+                <div style={{
+                  width: '60px',
+                  height: '60px',
+                  backgroundColor: '#ffc107',
+                  borderRadius: '50%',
+                  display: 'flex',
+                  alignItems: 'center',
+                  justifyContent: 'center',
+                  margin: '0 auto 20px',
+                  fontSize: '24px',
+                  color: 'white'
+                }}>
+                  ⚙️
+                </div>
+                <h3 style={{ fontSize: '1.5rem', marginBottom: '15px', color: '#333' }}>
+                  Easy Configuration
+                </h3>
+                <p style={{ color: '#666', lineHeight: '1.6' }}>
+                  Simple settings page to configure your Resend API key and sender email address. No server configuration required.
+                </p>
+              </div>
+
+            </div>
+          </div>
+        </section>
+
+        {/* How It Works Section */}
+        <section style={{ padding: '80px 20px', backgroundColor: '#f8f9fa' }}>
+          <div style={{ maxWidth: '1000px', margin: '0 auto' }}>
+            <h2 style={{
+              textAlign: 'center',
+              fontSize: '2.5rem',
+              marginBottom: '60px',
+              color: '#333',
+              fontWeight: '600'
+            }}>
+              How It Works
+            </h2>
+            
+            <div style={{
+              display: 'grid',
+              gridTemplateColumns: 'repeat(auto-fit, minmax(250px, 1fr))',
+              gap: '30px'
+            }}>
+              <div style={{ textAlign: 'center' }}>
+                <div style={{
+                  width: '50px',
+                  height: '50px',
+                  backgroundColor: '#007bff',
+                  borderRadius: '50%',
+                  display: 'flex',
+                  alignItems: 'center',
+                  justifyContent: 'center',
+                  margin: '0 auto 20px',
+                  color: 'white',
+                  fontSize: '20px',
+                  fontWeight: 'bold'
+                }}>
+                  1
+                </div>
+                <h3 style={{ fontSize: '1.3rem', marginBottom: '15px', color: '#333' }}>
+                  Configure Settings
+                </h3>
+                <p style={{ color: '#666', lineHeight: '1.6' }}>
+                  Add your Resend API key and verified sender email address in the settings page.
+                </p>
+              </div>
+
+              <div style={{ textAlign: 'center' }}>
+                <div style={{
+                  width: '50px',
+                  height: '50px',
+                  backgroundColor: '#28a745',
+                  borderRadius: '50%',
+                  display: 'flex',
+                  alignItems: 'center',
+                  justifyContent: 'center',
+                  margin: '0 auto 20px',
+                  color: 'white',
+                  fontSize: '20px',
+                  fontWeight: 'bold'
+                }}>
+                  2
+                </div>
+                <h3 style={{ fontSize: '1.3rem', marginBottom: '15px', color: '#333' }}>
+                  Compose Email
+                </h3>
+                <p style={{ color: '#666', lineHeight: '1.6' }}>
+                  Enter recipient emails, subject, and create your HTML email content using the built-in editor.
+                </p>
+              </div>
+
+              <div style={{ textAlign: 'center' }}>
+                <div style={{
+                  width: '50px',
+                  height: '50px',
+                  backgroundColor: '#ffc107',
+                  borderRadius: '50%',
+                  display: 'flex',
+                  alignItems: 'center',
+                  justifyContent: 'center',
+                  margin: '0 auto 20px',
+                  color: 'white',
+                  fontSize: '20px',
+                  fontWeight: 'bold'
+                }}>
+                  3
+                </div>
+                <h3 style={{ fontSize: '1.3rem', marginBottom: '15px', color: '#333' }}>
+                  Send & Track
+                </h3>
+                <p style={{ color: '#666', lineHeight: '1.6' }}>
+                  Click send and get instant feedback. Track delivery status and handle any errors gracefully.
+                </p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* CTA Section */}
+        <section style={{
+          padding: '80px 20px',
+          textAlign: 'center',
+          background: 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)',
+          color: 'white'
+        }}>
+          <div style={{ maxWidth: '600px', margin: '0 auto' }}>
+            <h2 style={{
+              fontSize: '2.5rem',
+              marginBottom: '20px',
+              fontWeight: '600'
+            }}>
+              Ready to Get Started?
+            </h2>
+            <p style={{
+              fontSize: '1.2rem',
+              marginBottom: '40px',
+              opacity: '0.9',
+              lineHeight: '1.6'
+            }}>
+              Start sending professional emails in minutes. No complex setup required.
+            </p>
+            <Link
+              href="/dashboard"
+              style={{
+                padding: '18px 40px',
+                backgroundColor: '#28a745',
+                color: 'white',
+                textDecoration: 'none',
+                borderRadius: '8px',
+                fontSize: '1.2rem',
+                fontWeight: '600',
+                transition: 'all 0.3s ease',
+                display: 'inline-block',
+                boxShadow: '0 4px 15px rgba(0,0,0,0.2)'
+              }}
+              onMouseOver={(e) => {
+                e.currentTarget.style.transform = 'translateY(-3px)';
+                e.currentTarget.style.boxShadow = '0 6px 20px rgba(0,0,0,0.3)';
+              }}
+              onMouseOut={(e) => {
+                e.currentTarget.style.transform = 'translateY(0)';
+                e.currentTarget.style.boxShadow = '0 4px 15px rgba(0,0,0,0.2)';
+              }}
+            >
+              Start Sending Emails
+            </Link>
+          </div>
+        </section>
+
+        {/* Footer */}
+        <footer style={{
+          padding: '40px 20px',
+          backgroundColor: '#333',
+          color: 'white',
+          textAlign: 'center'
+        }}>
+          <div style={{ maxWidth: '800px', margin: '0 auto' }}>
+            <p style={{ marginBottom: '20px', opacity: '0.8' }}>
+              Copyright &copy; 2025. Email API
+            </p>
+            <div style={{ display: 'flex', justifyContent: 'center', gap: '20px', flexWrap: 'wrap' }}>
+              <Link href="/dashboard" style={{ color: '#007bff', textDecoration: 'none' }}>Dashboard</Link>
+              <Link href="/settings" style={{ color: '#007bff', textDecoration: 'none' }}>Settings</Link>
+            </div>
+          </div>
+        </footer>
+      </div>
+    </>
+  )
 }
