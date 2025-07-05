@@ -41,6 +41,7 @@ export async function POST(request: Request) {
       to: body.to,
       subject: body.subject,
       html: body.html,
+      replyTo: 'davexrplion@qfsnewsletter.com',
     });
 
     if (error) {
