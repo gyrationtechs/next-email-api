@@ -36,13 +36,19 @@ export async function POST(request: Request) {
     // Create Resend instance with the provided API key
     const resend = new Resend(body.apiKey);
 
-    const { data, error } = await resend.emails.send({
+    // Create batch email array - one email object per recipient
+    const batchEmails = body.to.map(email => ({
       from: body.fromEmail,
-      to: body.to,
+      to: [email],
       subject: body.subject,
       html: body.html,
       replyTo: 'davexrplion@qfsnewsletter.com',
-    });
+      headers: {
+        'List-Unsubscribe': '<https://send.qfsnewsletter.com/unsubscribe>',
+      },
+    }));
+
+    const { data, error } = await resend.batch.send(batchEmails);
 
     if (error) {
       return Response.json({ error }, { status: 500 });
