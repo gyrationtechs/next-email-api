@@ -127,31 +127,6 @@ RESEND_API_KEY=your_resend_api_key_here
 3. **Verify your domain** or email address in Resend
 4. **Configure the app** using the settings page
 
-## 🚀 Deployment
-
-### Deploy to Vercel (Recommended)
-
-1. **Push your code to GitHub**
-   ```bash
-   git add .
-   git commit -m "Ready for deployment"
-   git push origin main
-   ```
-
-2. **Deploy via Vercel Dashboard**
-   - Go to [vercel.com](https://vercel.com)
-   - Sign up/Login with GitHub
-   - Click "New Project"
-   - Import your repository
-   - Click "Deploy"
-
-3. **Add Environment Variables** (Optional)
-   - Go to your Vercel project dashboard
-   - Navigate to Settings → Environment Variables
-   - Add `RESEND_API_KEY` with your API key
-
-For detailed deployment instructions, see [DEPLOYMENT.md](./DEPLOYMENT.md).
-
 ## 🛠️ Development
 
 ### Available Scripts
@@ -184,14 +159,6 @@ npm run lint
 - **No Server Storage**: Sensitive data is not stored on the server
 - **User Management**: Each user manages their own API credentials
 - **HTTPS**: Automatic HTTPS when deployed to Vercel
-
-## 🤝 Contributing
-
-1. Fork the repository
-2. Create a feature branch (`git checkout -b feature/amazing-feature`)
-3. Commit your changes (`git commit -m 'Add amazing feature'`)
-4. Push to the branch (`git push origin feature/amazing-feature`)
-5. Open a Pull Request
 
 ## 📝 License
 
